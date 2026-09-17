@@ -21,6 +21,7 @@ import { mountHelpOverlay } from "./ui/helpOverlay.ts";
 import { mountHud } from "./ui/hud.ts";
 import { mountInspectorPanel } from "./ui/inspectorPanel.ts";
 import { mountProjectForm } from "./ui/projectForm.ts";
+import { mountQrPanel } from "./ui/qrPanel.ts";
 import { mountStatsPanel } from "./ui/statsPanel.ts";
 import { startTourCard } from "./ui/tourCard.ts";
 import { playTour } from "./ui/tourPlayer.ts";
@@ -275,6 +276,7 @@ const statsPanel = mountStatsPanel(document.body, {
   speed: { min: MIN_SPEED, max: MAX_SPEED, initial: simSpeed, onChange: setSimSpeed },
   islands: { min: MIN_ISLANDS, max: MAX_ISLANDS, initial: DEFAULT_ISLAND_COUNT, onChange: rebuildIslandCount },
 });
+mountQrPanel(document.body);
 
 /** Extracted so rebuildIslandCount can recreate the picker bound to a freshly built worldGroup — createPicker captures `root` once at construction, so a replaced world needs a replaced picker, not a mutated one. */
 function buildPicker(root: THREE.Object3D): PickerHandle {

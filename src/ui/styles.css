@@ -192,6 +192,39 @@ body.fsa-touring #fsa-stats-panel:focus-within {
   opacity: 1;
 }
 
+/* --------------------------------- qr panel -------------------------------- */
+
+/* Desktop-only: a presenter showing this on a screen wants people to scan
+   it, but a visitor already on their own phone doesn't. Hidden below the
+   same 640px breakpoint the mobile section below uses. */
+#fsa-qr-panel {
+  position: fixed;
+  left: 16px;
+  bottom: 254px;
+  z-index: 5;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--fsa-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  line-height: 0;
+  transition: opacity var(--fsa-dur) ease;
+}
+
+.fsa-qr-panel__image {
+  display: block;
+  width: 96px;
+  height: 96px;
+}
+
+body.fsa-touring #fsa-qr-panel {
+  opacity: 0.3;
+}
+body.fsa-touring #fsa-qr-panel:hover,
+body.fsa-touring #fsa-qr-panel:focus-within {
+  opacity: 1;
+}
+
 /* -------------------------------- tour layer ------------------------------ */
 
 #fsa-tour-layer {
@@ -878,6 +911,10 @@ body.fsa-touring #fsa-stats-panel:focus-within {
     bottom: 10px;
     min-width: 0;
     max-width: calc(100% - 20px);
+  }
+
+  #fsa-qr-panel {
+    display: none;
   }
 
   #fsa-inspector-layer {
